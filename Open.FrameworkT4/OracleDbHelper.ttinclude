@@ -1,0 +1,182 @@
+<#@ assembly name="System.Core"#>
+<#@ assembly name="System.Data"#>
+<#@ assembly name="$(ProjectDir)\Open.Library\Oracle.ManagedDataAccess.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Oracle.ManagedDataAccess.Client" #>
+<#+
+    public class OracleDbHelper
+    {
+        public static List<Entity> GetEntities(string connectionString, List<string> databases)
+        {
+            var list = new List<Entity>();
+            OracleConnection conn = new OracleConnection(connectionString);
+            try
+            {
+                conn.Open();
+                var sSql = string.Format(@"select a.*,t.column_name,nvl(t.comments,'a') as column_comment,t.data_type,t.data_length,t.data_precision,t.nullable,t.column_id,t.constraint_type
+											from user_tab_comments a left join (
+											select a.Table_name,a.column_name,a.data_type,a.data_length,a.data_precision,a.nullable,a.column_id,nvl(b.comments,'a') as comments,d.constraint_type
+											from user_tab_columns a left join user_col_comments b on a.TABLE_NAME=b.table_name and a.COLUMN_NAME=b.column_name 
+                      left join user_cons_columns c on b.TABLE_NAME=c.table_name and b.COLUMN_NAME=c.column_name 
+                      left join user_constraints d on c.constraint_name = d.constraint_name where d.constraint_type is null or d.constraint_type !='C'
+											) t on a.TABLE_NAME = t.table_name where column_name is not null order by a.table_name,t.column_id");
+															OracleCommand command = new OracleCommand(sSql, conn);
+                using (OracleDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var table = reader["TABLE_NAME"].ToString();
+                        var column = reader["COLUMN_NAME"].ToString();
+                        var type = reader["DATA_TYPE"].ToString();
+                        var comment = reader["COLUMN_COMMENT"].ToString();
+                        var constraint_type = reader["CONSTRAINT_TYPE"].ToString();
+                        var entity = list.FirstOrDefault(x => x.EntityName == table);
+                        if (entity == null)
+                        {
+                            entity = new Entity(table);
+                            entity.Fields.Add(new Field
+                            {
+                                Name = column,
+                                Type = GetCLRType(type),
+                                Comment = comment,
+                                Constraint_type = constraint_type
+                            });
+                            list.Add(entity);
+                        }
+                        else
+                        {
+                            entity.Fields.Add(new Field
+                            {
+                                Name = column,
+                                Type = GetCLRType(type),
+                                Comment = comment,
+                                Constraint_type = constraint_type
+                            });
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return list;
+        }
+
+        public static string GetCLRType(string dbType)
+        {
+            switch (dbType)
+            {
+                case "tinyint":
+                case "smallint":
+                case "mediumint":
+                case "int":
+                case "integer":
+				case "INTEGER":
+                    return "int";
+
+                case "bigint":
+				case "LONG":
+                    return "long";
+
+                case "double":
+				case "real":
+                case "REAL":
+                    return "double";
+
+                case "float":
+                case "FLOAT":
+                    return "float";
+
+                case "decimal":
+				case "numeric":
+
+				case "NUMBER":
+                case "DECIMAL":
+                    return "decimal";
+
+                case "bit":
+                    return "bool";
+
+                case "date":
+                case "time":
+                case "year":
+                case "datetime":
+                case "timestamp":
+				case "DATE":
+                    return "DateTime";
+
+                case "tinyblob":
+                case "blob":
+                case "mediumblob":
+                case "longblog":
+                case "binary":
+                case "varbinary":
+				case "RAW":
+				case "LONG RAW":
+				case "BLOB":
+				case "BFILE":
+                    return "byte[]";
+
+                case "CHAR":
+				case "VARCHAR2":
+                case "NCHAR":
+                case "NVARCHAR2":
+                case "mediumtext":
+                case "longtext":
+				case "CLOB":
+				case "NCLOB":
+				case "ROWID":
+				case "NROWID":
+                    return "string";
+
+                case "point":
+                case "linestring":
+                case "polygon":
+                case "geometry":
+                case "multipoint":
+                case "multilinestring":
+                case "multipolygon":
+                case "geometrycollection":
+                case "enum":
+                case "set":
+                default:
+                    return dbType;
+            }
+        }
+    }
+
+    public class Entity
+    {
+        public Entity()
+        {
+            this.Fields = new List<Field>();
+        }
+        public Entity(string name) : this()
+        {
+            this.EntityName = name;
+        }
+
+        public string EntityName { get; set; }
+        public List<Field> Fields { get; set; }
+    }
+
+    public class Field
+    {
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Comment { get; set; }
+        public string Constraint_type { get; set; }
+    }
+#>
+
+<#+
+	public class config
+	{
+        public static readonly string ConnectionString = @"Data Source=139.224.62.79:1521/pdborcl;User ID=galasys;Password=gsglobal;";
+		public static readonly string DbDatabase = "pdborcl";
+	}
+#>

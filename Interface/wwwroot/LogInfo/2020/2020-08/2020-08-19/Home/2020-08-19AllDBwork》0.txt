@@ -1,0 +1,13 @@
+﻿
+
+
+====================【开始】====================
+记录时间：2020-08-19 12:57:32.469
+请求参数：{"RequestData":{"AgencyCode":"string","Method":"string","Requestor":"string","RequestTime":0,"Data":{"AgencyCode":"string","Method":"string","Requestor":"string"}},"Signed":"string"}
+====================【结束】====================
+
+
+====================【开始】====================
+记录时间：2020-08-19 12:57:32.522
+返回参数：{"Value":{"Code":"90013","Message":"请求方法不合法","Method":"AllDBwork","Responder":"InTel","ReponseTime":"2020-08-19 12:57:32","Data":null},"Formatters":[],"ContentTypes":[],"DeclaredType":null,"StatusCode":null}
+====================【结束】====================

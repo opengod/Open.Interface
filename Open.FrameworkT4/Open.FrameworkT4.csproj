@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5756E74-4803-42E7-93E4-6A575532ABBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QZYL.FrameworkT4</RootNamespace>
+    <AssemblyName>QZYL.FrameworkT4</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Open.Entity\CONSOLE_USER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\GROUP_TEST.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\Open.Entity_Oracle.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Open.Entity\Open.Entity_Mysql.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\ORDER_VERIFICATION.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\PAY_ORDERS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\POS_CASHFLOW.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\STUDENT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\SYS_TEMP_FBT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\TEACHER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\THEATRESCENS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\THEATRESEATS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_ACTIVITE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_ACTIVITE_USER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_ADVERT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_ADVERTHIT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_COLUMN.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_LINK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_MEMBER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_MEMBER_VISITOR.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_ORDERINFO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_PARKINFO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_PARKINFOFILE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_PRODUCTINFO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_TRAVELINFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_B2C_TRAVELNOTICE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_AGMT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_AGREEMENT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_AREA.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_BALANCE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_BEDTYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_CHARGETYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_CHECKLOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COMMENT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COMMENTLIKE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COMPANY.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COMPLAIN.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COMPLAINANSWER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COMPLAINSET.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COMPLAIN_copy.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COUPON.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_COUPONPRO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_CUSTOMERS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_DEALINFO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_DEVICE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_DIANPINGLOG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_DISITEMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_DISORDER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_DISORDERITEMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_DISTIKCET.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ENDORSE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_FBALANCE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_FILE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_GUIDE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_HOTEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_HOTELORDERSTATUS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_IMAGEFILE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_LOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_MESSAGE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_MTBASEDATA.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_NOTICEURLCONFIG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ORDER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ORDERBUSINESS.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ORDERITEMS.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ORDERLOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ORDERSTATUS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ORDERS_LOG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ORDERTYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_OTA_INTY.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PACKAGE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PACKAGEITEM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PACKAGES.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAG_DTL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAG_DTLCATER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAG_DTLHOTEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAG_DTLPRO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAG_DTLTOURISM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAKUSE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PARKAREA.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PARKCALLED.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAYLOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAYMODE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAYNOTES.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PAYTYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PDT_CTL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PDT_DTL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PDT_INTY.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PDT_TYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_POSPONE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PRICECAL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PRODUCT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PRODUCTAREA.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PRODUCTPACKAGE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PRODUCT_GROUP.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_PSTOCK.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_QRCODEINFO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_QUNABACK.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_QUNALOG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_QUOTA.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_QUOTE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_QUOTEDL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RECHARGE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_ROOMTYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RTRULE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RTRULECATER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RTRULEHOTEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RTRULEPRO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RTRULETOURISM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RTT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RTTRULE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_RULE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_SCREENINGS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_SENDMESLOG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_SHOP.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_STARLEVEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_STOCK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_STUDENT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_SYNCERRORORDER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TB_TBORDER_LOG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TDRIVER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TGUIDE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TITEMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TMEAL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TORDER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TORDERITEMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TORDERMEAL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TOURISTS.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TRAVELORDERINFO_ZY.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TRAVELORDER_ZY.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_TWBTRN.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_VISITOR.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BIZ_VISITPRESON.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BUSINESS_CART.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BUSINESS_INFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_BUSINESS_PRO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_CARD_BIZ.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_CARD_PARK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_CODE_CODE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_CODE_HOTELBRAND.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_CODE_HOTELLEVEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_CODE_HOTELROOMTYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DATA_MESSAGETEMP.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DATA_MSGTEMPAPPLY.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DATA_ORG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DATA_TARVELINFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DATA_VISITOR.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_FILECATERFOOD.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_FILECATERING.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_FILECATERMEAL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_FILEHOTEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_FILEHOTELROOM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_FILETOURISMLINE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_HOTELINVENTORY.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_HOTELINVENTORYROOM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_TOURISMLINEPLAN.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DAT_TOURISMLINEPRO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DESIGN_MEMBER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DESIGN_TEAM.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DESIGN_VOTE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DIS_DETAIL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DIS_LEVEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DIS_LEVELRULE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DIS_ORDER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DIS_PAYNOTES.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DIS_SOTCK.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_DIS_USER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_ENT_INFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_ENT_PRO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_EXPRESS_ADDRESS.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_EXPRESS_AREA.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_EXPRESS_AREADETAIL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_EXPRESS_TEMPLATE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_BUSINESS.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_DEVICE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_HOTEL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_LINE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_LINE_DETAIL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_PARK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_PLAN.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_PSERVICE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_SPOT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_SPOTTEST.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_TRAIL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GIS_VOICE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GUIDE_BIZ.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_GUIDE_TAG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_ADVANCE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_ARRIVETIME.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_BOARDINFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_BOARDPERIOD.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_BOARDROOM.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_GUARANTEE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_INFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_PRICECAL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_PRICEITEMS.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_ROOM.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_ROOMDETAIL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_RTTRULE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_HOTEL_SELLRULE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LINE_BIZ.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LINE_HOTEL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LINE_ORDER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LINE_PARK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LINE_PRO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LINE_SELLRULE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LOTTERY_AWARDS.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_LOTTERY_USER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_OBLIGATE_ORDER.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_OBLIGATE_ORDERITEMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_ORDERNO_LOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_PARK_INFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_QUESTION_INFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_QUESTION_RESULT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_QUESTION_USER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_QUESTION_USER_copy.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_REPAST_INFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_REPAST_PRO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_REPORT_ORGCHECK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_REPORT_ORGPRODUCT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_BALANCERECORD.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_CATERFOOD.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_CATERING.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_DISTRIBUTIONSEAT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTEL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTELORDERDETAIL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTELORDERS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTELROOM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTELRTT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTELSTORE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTELSTOREDETAIL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_HOTEL_CHECK_IN.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_MEMBERS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_MESSAGE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_NUMDISTRIBUTION.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_PRODUCTOFFPLACE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_SEATOCCUPIES.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_SYNCINFO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_THEATREORDERITEMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_THEATREORDERITEMSSEAT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_THEATREPRO.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_TOURISMLINE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_TOURISMLINEITEM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_TOURISMLINEORDERS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_TRADELOG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_RPT_TWBOFFPLACE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SWIFTPAY_LOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SWIFT_LOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ACCOUNT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_AREA.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_AREACODE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_BANKCONFIG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_BARCODE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_CATCHMESSAGEBUG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_CODEADSTKIND.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_CODECONTINENT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_CODECOUNTRY.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_FILE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_LIMIT.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_LOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_MAXID.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_MENU.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_MENUMODULE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_MESSAGECONFIG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ORDERNO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ORG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ORGMENU.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ORGTYPE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ORGX.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_PRSMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_QUNARPARKCONFIG.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_REGIONALISM.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ROLE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_ROLEMENU.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_SMS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_SMSACCOUNT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_SMSNOTES.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_SMSPRODUCT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_SUBDIVISIONS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_TORDERMESSAGE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_TRANSACTION.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_USER.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_USERMENU.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_SYS_USERROLE.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TASK_JOB.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TASK_LOG.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_BIZ.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_BOOKACTIVITE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_BOOKCAL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_BOOKVISITOR.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_CUPON.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_INFO.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_INFO_MOBILE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_PERIOD.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_SELLRULE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_SELLSTOCK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_SETMEAL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_SETMEALHOTEL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TICKET_SETMEALPARK.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TRAVEL_STRATEGY.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_TRAVEL_STRATEGYDETAIL.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_VISIT_PAGE.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\T_VISIT_TREND.cs">
+      <DependentUpon>Open.Entity_Mysql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\VIEW_PARKSALESREPORT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\VIEW_TABLE_COMMENTS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\VIEW_TABLE_CONSTRAINTS.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\V_CONSUMPTIONDETAIL.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\V_GETSALEDPRODUCT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\V_ORDERITEMSTW.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Open.Entity\V_SALEORDERREPORT.cs">
+      <DependentUpon>Open.Entity_Oracle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="MysqlDbHelper.ttinclude" />
+    <None Include="OracleDbHelper.ttinclude" />
+    <None Include="T4Manager.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Open.Entity\Open.Entity_Oracle.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Open.Entity_Oracle.cs</LastGenOutput>
+    </Content>
+    <Content Include="Open.Entity\Open.Entity_Mysql.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Open.Entity_Mysql.cs</LastGenOutput>
+    </Content>
+    <Content Include="Open.Library\MySql.Data.dll" />
+    <Content Include="Open.Library\Oracle.ManagedDataAccess.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

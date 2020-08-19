@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+	  <OutputPath>..\import\</OutputPath>
+	  <DocumentationFile>..\import\Open.Entity.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="%2a%2a\**" />
+		<EmbeddedResource Remove="%2a%2a\**" />
+		<None Remove="%2a%2a\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="MysqlModels\Biz_TenantAccount.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+		<PackageReference Include="sqlSugarCore" Version="5.0.0.14" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="MysqlModels\" />
+	  <Folder Include="OracleModels\" />
+	</ItemGroup>
+
+</Project>
