@@ -10,9 +10,13 @@
 
   <ItemGroup>
     <Compile Remove="LogInfo\**" />
+    <Compile Remove="wwwroot\LogInfo\**" />
     <Content Remove="LogInfo\**" />
+    <Content Remove="wwwroot\LogInfo\**" />
     <EmbeddedResource Remove="LogInfo\**" />
+    <EmbeddedResource Remove="wwwroot\LogInfo\**" />
     <None Remove="LogInfo\**" />
+    <None Remove="wwwroot\LogInfo\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +30,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Open.Entity\Open.Entity.csproj" />
     <ProjectReference Include="..\Open.Utils\Open.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 
